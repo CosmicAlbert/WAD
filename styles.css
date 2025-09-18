@@ -1,0 +1,85 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4a90e2;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --fun-fact-color: #666666;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: var(--text-color);
+  padding: 20px;
+}
+
+header, footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for profile cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* desktop default */
+  gap: 20px;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual profile card */
+.profile-card {
+  background: var(--card-bg);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px; /* box model: padding inside */
+  text-align: center;
+
+  /* Flexbox to center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+}
+
+/* Profile image */
+.profile-card img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Hover effect */
+.profile-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+/* Fun fact styling */
+.fun-fact {
+  font-style: italic;
+  color: var(--fun-fact-color);
+}
